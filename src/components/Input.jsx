@@ -1,4 +1,6 @@
-const Input = ({ label, textarea, ...props }) => {
+import { forwardRef } from "react";
+
+const Input = forwardRef(function Input({ label, textarea, ...props }, ref) {
   const inputClass =
     "w-full p-1 border-b-2 rounded-md bg-stone-200 text-stone-600  focus:outline-none focus:border-stone-600";
 
@@ -8,12 +10,12 @@ const Input = ({ label, textarea, ...props }) => {
         {label}
       </label>
       {textarea ? (
-        <textarea className={inputClass} {...props} />
+        <textarea ref={ref} className={inputClass} {...props} />
       ) : (
-        <input className={inputClass} {...props} />
+        <input ref={ref} className={inputClass} {...props} />
       )}
     </p>
   );
-};
+});
 
 export default Input;
