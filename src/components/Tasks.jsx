@@ -16,7 +16,10 @@ const Tasks = ({ tasks, onAdd, onDelete }) => {
           {tasks.map((item) => (
             <li key={item.id} className="flex justify-between my-4">
               <span>{item.text}</span>
-              <button className="text-stone-700 hover:text-red-500">
+              <button
+                className="text-stone-700 hover:text-red-500"
+                onClick={() => onDelete(item.id)}
+              >
                 Clear
               </button>
             </li>
