@@ -8,8 +8,21 @@ import SelectedProject from "./components/SelectedProject";
 function App() {
   const [projectState, setProjectState] = useState({
     selectedProjectId: undefined,
-    projects: [],
-    tasks: [],
+    projects: [
+      {
+        description: "this is second project",
+        dueDate: "2024-07-05",
+        id: 0.38341637906148374,
+        title: "second project",
+      },
+    ],
+    tasks: [
+      {
+        id: 0.06091411115888401,
+        projectId: 0.38341637906148374,
+        text: "this is the first task of second project",
+      },
+    ],
   });
 
   const handleAddTask = (text) => {
